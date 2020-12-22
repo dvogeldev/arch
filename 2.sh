@@ -27,11 +27,17 @@ result=$? && check_if_suceeded
 
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
-# set hostname
-echo "dv-pc" > /etc/hostname
-echo "127.0.0.1 localhost" > /etc/hosts
-echo "::1 localhost" >> /etc/hosts
-echo "192.168.0.210 dv-pc.localdomain dv-pc" >> /etc/hosts
+## set hostname (dv-pc)
+#echo "dv-pc" > /etc/hostname
+#echo "127.0.0.1 localhost" > /etc/hosts
+#echo "::1 localhost" >> /etc/hosts
+#echo "192.168.0.210 dv-pc.localdomain dv-pc" >> /etc/hosts
+
+## set hostname (dv-tp)
+#echo "dv-tp" > /etc/hostname
+#echo "127.0.0.1 localhost" > /etc/hosts
+#echo "::1 localhost" >> /etc/hosts
+#echo "192.168.0.205 dv-tp.localdomain dv-tp" >> /etc/hosts
 
 
 #selecting fastest mirror
@@ -98,7 +104,8 @@ UUID=$(echo $UUID | cut -f2 -d":")
 echo $UUID
 echo "title Arch Linux" > /boot/loader/entries/arch.conf
 echo "linux /vmlinuz-linux" >> /boot/loader/entries/arch.conf
-#echo "initrd /intel-ucode.img" >> /boot/loader/entries/arch.conf
+#echo "initrd /intel-ucode.img" >> /boot/loader/entries/arch.conf	### (dv-tp)
+#echo "initrd /amd-ucode.img" >> /boot/loader/entries/arch.conf		### (dv-pc)
 echo "initrd /initramfs-linux.img" >> /boot/loader/entries/arch.conf
 echo "options cryptdevice=UUID=$UUID:luks:allow-discards root=/dev/mapper/luks rootflags=subvol=@ rd.luks.options=discard rw quiet mem_sleep_default=deep" >> /boot/loader/entries/arch.conf
 

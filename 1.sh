@@ -23,13 +23,14 @@ function check_if_suceeded {
 
 #define where system, swap and bootloader should be.
 # /boot directory and swap partition are not encrypted.
-# Desktop
+
+## Desktop (dv-pc)
 # DRIVE=/dev/nvme0n1
 # BOOT_drv=/dev/nvme0n1p1
 # SWAP_drv=/dev/nvme0n1p2
 # SYSTEM_drv=/dev/nvme0n1p3
 
-# Laptop
+## Laptop (dv-tp)
 # DRIVE=/dev/sda
 # BOOT_drv=/dev/sda1
 # SWAP_drv=/dev/sda2
