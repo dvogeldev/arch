@@ -45,23 +45,27 @@ pacman -Syu --noconfirm reflector
 result=$? && check_if_suceeded
 printf "${GREEN}Fastest mirrors selected${NC}\n";
 
-reflector -c "United States" -a 6 -l 30 -p https --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c "United States" -a 12 -p https --sort rate --save /etc/pacman.d/mirrorlist
 result=$? && check_if_suceeded
 
 pacman -Syu --noconfirm \
          base-devel \
          btrfs-progs \
-	 chezmoi \
-	 emacs \
-	 fd fzf bat exa nnn \
+         aspell aspell-en \
+         chezmoi \
+         emacs \
+         fd fzf bat exa nnn \
          git \
-	 keybase kbfs \
-         linux linux-firmware linux-headers amd-ucode \
+         keybase kbfs \
+         linux linux-firmware linux-headers \
+         #amd-ucode \       #(dv-pc)
+         #intel-ucode \     #(dv-tp)
          neovim \
          networkmanager \
-	 numlockx \
+         #nodejs
+         #numlockx \         #(dv-pc)
          openssh \
-	 ttf-roboto \
+         ttf-roboto \
 
 
 result=$? && check_if_suceeded
