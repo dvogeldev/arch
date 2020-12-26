@@ -94,6 +94,8 @@
     neovim
     brave
     gitAndTools.gitFull
+    chezmoi
+    tldr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
